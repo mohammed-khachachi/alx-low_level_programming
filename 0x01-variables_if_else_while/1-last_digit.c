@@ -1,42 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 /**
- * main - Entry point of the program
- *
- * Description: The main function generates a random 
- * number and
- * computes the last digit to output the corresponding 
- * string.
- *
+ * main - Entry point
+ * Description: checks on the last digit of the assigned var
  * Return: Always 0 (success)
  */
 
 int main(void)
 {
-	int n;
-	int lastdigit;
+	int n, m;
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	lastdigit = n % 10;
-
-	if (lastdigit > 5)
+	m = n % 10;
+	if (m > 5)
 	{
-	printf("Last digit of %d is %d and is greater 
-			than 5\n", n, lastdigit);
+		printf("Last digit of %d is %d and is greater than 5\n", n, m);
 	}
-	else if (lastdigit == 0)
+	else if (m < 6 && m != 0)
 	{
-	printf("Last digit of %d is %d and is 0\n", n, 
-			lastdigit);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, m);
 	}
 	else
 	{
-	printf("Last digit of %d is %d and is less 
-			than 6 and not 0\n", n, 
-			lastdigit);
+		printf("Last digit of %d is %d and is 0\n", n, m);
 	}
 	return (0);
-	}
+}
